@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CSS Reference Guide</h1>
+    <h2>Resetting Defaults</h2>
+        <p> Web browsers have a default stylesheet they use if one isn't provided. This stylesheet is known as the user agent stylesheet. User agent stylesheets often set default values for padding and margin, which can make it difficult to style a web page. Many devlopers reset these values to zero to work from a blank slate. This can be done in the main stylesheet or in another stylesheet called reset.css</p>
+    <h2>Selectors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>selector type</th>
+                    <th>css format</th>
+                    <th>notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>type</td>
+                    <td>opening tag</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>universal</td>
+                    <td><span class="code">*</span></td>
+                    <td>Useful for resetting default bowser settings or selecting all children of parent elements.</td>
+                </tr>
+                <tr>
+                    <td>class</td>
+                    <td><span class="code">.class_name</span></td>
+                    <td>HTML elements can have multiple classes (separated by commas). Selects all elements with the specified class. Classes are meant to be reused</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td><span class="code">#id_name</span></td>
+                    <td>HTML elements can only have 1 id and each id can only be used once per page. Overrides class styling</td>
+                </tr>
+                <tr>
+                    <td>attribute</td>
+                    <td><span class="code">[attribute_name]</span></td>
+                    <td>Can get more specific <span class="code">type[attribute* = value]</span> selects elements with attribute containing value</td>
+                </tr>
+                <tr>
+                    <td>pseudo-class</td>
+                    <td><span class="code">selector:pseudo-class</span></td>
+                    <td>Pseudo-classes are used to define a special state of an element ex focus, visited, disabled, active.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Chaining Selectors</h3>
+            <p>
+                Combining multiple selectors for specificity
+            </p>
+        <h4>Decendant Combinator</h4>
+            <p>
+                Selects elements nexted within other HTML elements <br> ex <span class="code">.main-list li</span> selects li elements nested in the main-list class
+            </p>
+        <h4>Using Multiple Selectors</h4>
+            <p>
+                Multiple selectors can be used for the same declaration. Selectors are separated with commas.
+            </p>
+    <h2>Box Model</h2>
+            <p>
+                The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.
+            </p>
+            <img src="css-box-model.svg" alt="" id="box-model">
+        <h3>Border</h3>
+            <p>A line surrounding an element. Has width, style, and color.</p>
+            <ul>
+                <li>
+                    width - boder thickness. Can be set in pixels or thin, medium, thick.
+                </li>
+                <li>
+                    style - can be 1 of 10 styles. The styles are dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden.
+                </li>
+                <li>
+                    color - can be set with 140 built-in color keywords
+                </li>
+            </ul>
+            <p>Defaults to medium, none, color where color is current color of the element.</p>
+            <p>All three values are set in one line of code.</p>
+            <p>property - border:</p> 
+            <p>border radius - a property that rounds the corners of the border. To make a cirular border set the element to have the same width and height and set border-radius to 50%</p>
+        <h3>Padding</h3>
+            <p>The space between contents of box and borders of box.</p>
+            <p>Properties - padding:, padding-top:, padding-right:, padding-bottom:, padding-left:</p>
+            <p>Different values for padding properties can be set in one line of code</p>
+            <p class="indent">
+                <span class="code">selector {padding: top right bottom left; }
+                <br> selector {padding: top left&right bottom; }
+                <br> selector {padding: top&bottom left&right; }</span>
+            </p>
+        <h3>Margin</h3>
+            <p>The space directly outside the box.</p>
+            <p>Properties - margin:, margin-top:, margin-right:, margin-bottom:, margin-left:</p>
+            <p>Different values for margin properties can be set in one line of code, like padding</p>
+            <p class="indent">
+                <span class="code">selector {margin: top right bottom left; }
+                <br> selector {margin: top left&right bottom; }
+                <br> selector {margin: top&bottom left&right; }</span>
+            </p>
+            <h4>Centering Elements</h4>
+                <p>To be centered, an element must have a width</p>
+                <p>Uses property value auto for left and right margin</p>
+                <p class="indent"><span class="code">selector {margin: 0 auto;}</span></p>
+        <h3>Minimum and Maximum Width/Height</h3>
+            <p>Limits how narrow/wide or tall an element can be when browser size is adjusted.</p>
+            <p>Setting the minimum and maximum width or height can cause content of the element to overflow its box.</p>
+            <p>Properties - min-width:, max-width:, min-height:, max-height:</p>
+        <h3>Overflow</h3>
+            <p>Controls what happens to content that spills outside its box.</p>
+            <p>Property - overflow:</p>
+            <p>common values</p>
+            <ul>
+                <li>hidden - hides overflow content</li>
+                <li>scroll - creates scrollbar to view overflow content</li>
+                <li>visible - content will overflow box. Deafult value of overflow</li>
+            </ul>
+            <p>Set on parent element for rendering children elements</p>
+        <h3>Visibility</h3>
+            <p>Property that can hide element from view.</p>
+            <p>Property - visability:</p>
+            <p>Values</p>
+            <ul>
+                <li>hidden - hides element but the space the element occupies is still present</li>
+                <li>visible - shows element</li>
+                <li>collapse - collapses element</li>
+            </ul>
+        <h3>New Box Model</h3>
+            <p>The box model adds the width of element, border, and padding together to figure out box size. This can cause problems when nesting boxes. The new box model changes how width and height is calculated. It increases predictability. Content size is adjusted to accomadate padding and border.</p>
+            <p class="indent"><span class="code">selector {box-sizing: border-box;}</span></p>
+    <h2>Display and Positioning</h2>
+        <h3>Positioning</h3>
+            <p>Position - a property that can take on one of five values:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>value</th>
+                        <th>descrption</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>static</td>
+                        <td>the default value</td>
+                    </tr>
+                    <tr>
+                        <td>relative</td>
+                        <td>value that allows you to position an element relative to its default, static position. other content will not be adjusted to fit into any gap left by element. requires one or more offset properties <br>top, bottom, left, or right</td>
+                    </tr>
+                    <tr>
+                        <td>absolute</td>
+                        <td>positions element relative to nearest non-static element. all other elements will ignore the element and act as if it isnt there. can take offest property declarations. removes elemetn from normal flow of document.</td>
+                    </tr>
+                    <tr>
+                        <td>fixed</td>
+                        <td>fixes element to a specific position on page. location determined by offset properties. removes element from normal flow of document.</td>
+                    </tr>
+                    <tr>
+                        <td>sticky</td>
+                        <td>keeps element in document flow as user scrolls but sticks to a specific postion set by offset properties.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>z-index - a property that sets how far back or forward an element should appear. set to an integer value.</p>
+        <h3>Display</h3>
+            <p>All HTML elements have a default dispaly value that dictates if it can share horizontal space with other elements. This default can be overridden with the display property</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>value</th>
+                        <th>description</th>
+                        <th>default for</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>inline</td>
+                        <td>elements have a box that wraps tightly around their content, only taking up the space required for their content. don't require a new line after elements. cannot be altered in size with height and width.</td>
+                        <td>&lt;em&gt;<br>&lt;strong&gt;<br>&lt;a&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>block</td>
+                        <td>elements that aren't displayed in the same line as  the content around them. default to the width of the entire page but can be modified. default height to accomodate contents. height can also be modified</td>
+                        <td>headings<br>&lt;p&gt;<br>&lt;div&gt;<br>&lt;footer&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>inline-block</td>
+                        <td>elements that can appear next to eachother. dimensions specified by width and height</td>
+                        <td>images</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>float - a property that moves an element as far left or right as possible. can be set to the value left or right. element must have a specified width to use this property</p>
+            <p>clear - a property that specifies how elements should behave when they bump into eachother on the page. can be set to left, right, both, or none.</p>
+            <p class="indent">left - the left side of the element will not touch any other element within the same containing element</p>
+            <p class="indent">right - the right side of the element will not touch any other element within the same containing element</p>
+            <p class="indent">both - neither side of the element will touch any other element within the same containing element</p>
+            <p class="indent">none - the element can touch on either side</p>
+</body>
+</html>

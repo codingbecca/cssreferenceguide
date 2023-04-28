@@ -1,0 +1,43 @@
+body{
+   font-family: Arial, Helvetica, sans-serif; 
+   background-color: aliceblue;
+   box-sizing: border-box;
+   margin: 0 auto;
+   width: 800px;
+}
+
+.code{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: navy;
+    color: white;
+}
+
+#box-model{
+    width: 484px;
+    height: 305px;
+}
+
+table{
+    background-color: floralwhite;
+    border: medium solid black;
+    border-collapse: collapse;
+    width: 800px;
+    margin: 0 auto;
+}
+
+td, th{
+    border: thin solid black;
+}
+
+.indent{
+    margin-left: 50px;
+}
+
+p{
+    margin: 0 auto;
+    width: 800px;
+}
+
+h1{
+    text-align: center;
+}
